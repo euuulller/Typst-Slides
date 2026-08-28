@@ -164,7 +164,12 @@
   set par(justify: false, leading: 0.65em)
   // Realce de sintaxe nativo, com a paleta do projeto. Ver config/codigo.tmTheme.
   set raw(theme: "codigo.tmTheme")
-  show raw: set text(font: fontes.mono, size: corpo.codigo)
+  show raw: set text(font: fontes.mono)
+  // Bloco de código tem corpo próprio; código EM LINHA acompanha o texto ao
+  // redor. Tamanho absoluto nos dois quebrava o código em linha dentro de um
+  // título, que sairia a 16pt num título de 36pt.
+  show raw.where(block: true): set text(size: corpo.codigo)
+  show raw.where(block: false): set text(size: 0.92em)
   // Matemática em serifa sobre texto em Calibri: é a convenção do material
   // técnico e o padrão do Typst. Explícito para a escolha ficar visível.
   show math.equation: set text(font: fontes.matematica)

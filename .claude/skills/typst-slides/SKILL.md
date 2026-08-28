@@ -88,6 +88,10 @@ e exercício.
 Realce de sintaxe: nativo do Typst com a paleta do projeto em `config/codigo.tmTheme`.
 Nenhum pacote. Suporta `typ`, `python`, `latex`, `c` e os demais do syntect.
 
+Bloco de código tem corpo absoluto; **código em linha usa corpo relativo** (`0.92em`).
+Tamanho absoluto nos dois faz o código em linha dentro de um título sair a 16 pt num
+título de 36 pt.
+
 ## Densidade e legibilidade
 
 Cada slide responde a **uma** pergunta: o que é / por que existe / como se escreve / quando
