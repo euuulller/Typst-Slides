@@ -68,13 +68,22 @@
       ))
     },
   )
-  let desloca(dx, dy, c) = place(top + left, dx: dx, dy: dy, c)
+  let desloca(n, c) = place(
+    top + left,
+    dx: badge.desloca-x * (2 - n),
+    dy: badge.desloca-y * n,
+    c,
+  )
 
-  box(width: badge.largura + 6pt, height: badge.altura + 6pt, {
-    desloca(6pt, 0pt, carta(false))
-    desloca(3pt, 3pt, carta(false))
-    desloca(0pt, 6pt, carta(true))
-  })
+  box(
+    width: badge.largura + badge.desloca-x * 2,
+    height: badge.altura + badge.desloca-y * 2,
+    {
+      desloca(0, carta(false))
+      desloca(1, carta(false))
+      desloca(2, carta(true))   // a da frente, com o número
+    },
+  )
 }
 
 // --------------------------------------------------------------------------
@@ -161,8 +170,8 @@
 
   place(
     top + left,
-    dx: badge.centro-x - (badge.largura + 6pt) / 2,
-    dy: badge.centro-y - (badge.altura + 6pt) / 2,
+    dx: badge.centro-x - (badge.largura + badge.desloca-x * 2) / 2,
+    dy: badge.centro-y - (badge.altura + badge.desloca-y * 2) / 2,
     badge-paginacao(),
   )
 }
