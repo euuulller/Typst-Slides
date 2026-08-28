@@ -13,7 +13,7 @@
 //      typst watch   --root . main.typ build/main.pdf
 // ==========================================================================
 
-#import "config/global.typ": apresentacao, slide-titulo, slide-topicos
+#import "config/global.typ": apresentacao, slide-titulo, slide-topicos, slide-estrutural
 
 // Toda a aparência vive em config/. Trocar o visual da apresentação
 // inteira é editar config/theme.typ — nenhuma seção precisa ser tocada.
@@ -54,5 +54,22 @@
 = Prática
 #include "sections/13-universe.typ"
 #include "sections/14-pacotes.typ"
+#include "sections/15-artigo.typ"
+#include "sections/16-conclusao.typ"
 
-// FASE 11 acrescenta a esta seção: artigo completo e conclusão.
+// --------------------------------------------------------------------------
+//  Referências: slide estrutural, no mesmo desenho de "Tópicos".
+//  O estilo ABNT é o nativo do compilador — a apresentação pratica o que
+//  ensina na seção de ABNT.
+// --------------------------------------------------------------------------
+#slide-estrutural[Referências][
+  #set text(size: 0.8em)
+  // `full: true` é obrigatório aqui: por padrão o Typst imprime SÓ as obras
+  // citadas com @ no texto, e uma apresentação não cita — ela mostra.
+  #bibliography(
+    "referencias.bib",
+    style: "associacao-brasileira-de-normas-tecnicas",
+    title: none,
+    full: true,
+  )
+]
