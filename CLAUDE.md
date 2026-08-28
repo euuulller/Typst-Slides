@@ -120,4 +120,7 @@ Commits atômicos, um por unidade lógica, mensagem em pt-BR explicando o **porq
 
 Fases: 1 skills ✓ · 2 arquitetura ✓ · 3 CLAUDE.md ✓ · 4 sistema visual ✓ · 5 componentes ✓ ·
 6 fundamentos ✓ · 7 sintaxe ✓ · 8 elementos ✓ · 9 ABNT ✓ · 10 pacotes ✓ · 11 artigo final ✓ ·
-12 revisão · 13 build final.
+12 revisão ✓ · 13 build final ✓.
+
+Projeto concluído. Para retomar: leia este arquivo, invoque `compilar-revisar` e siga o
+ciclo build → warnings → render → inspeção antes de qualquer alteração.
