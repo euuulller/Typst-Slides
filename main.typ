@@ -51,6 +51,8 @@
 #include "sections/11-citacoes.typ"
 #include "sections/12-abnt.typ"
 
-// Próximas seções (FASES 10 e 11):
-//   = ABNT        referências, citações, normas
-//   = Prática     pacotes, artigo completo, conclusão
+= Prática
+#include "sections/13-universe.typ"
+#include "sections/14-pacotes.typ"
+
+// FASE 11 acrescenta a esta seção: artigo completo e conclusão.

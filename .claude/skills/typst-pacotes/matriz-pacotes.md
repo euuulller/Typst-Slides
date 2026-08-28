@@ -179,4 +179,20 @@ compilar.
 
 | Pacote | Versão fixada | Onde é usado | Verificado em |
 |---|---|---|---|
-| touying | 0.7.4 | `config/theme.typ` | *pendente — FASE 2* |
+| touying | 0.7.4 | `config/global.typ` | 27/08/2026 |
+
+### Smoke test em lote — 28/08/2026, Typst 0.15.1
+
+Todos importam sem erro: `codly` 1.3.0 · `unify` 0.8.1 · `cetz` 0.5.2 · `fletcher` 0.5.8
+· `glossarium` 0.5.10 · `subpar` 0.2.2 · `lovelace` 0.3.1.
+
+Teste **funcional** (não só import) em dois deles:
+
+- `unify`: `#qty("3.5", "kV")` → `3,5 kV`; `#num("1.6e-19")` → `1,6 · 10⁻¹⁹`. Confirmado.
+  **Limitação encontrada:** `numrange` **não** aceita `unit:` — erro `unexpected argument`.
+- `codly`: numeração de linha e realce funcionam; o **rótulo de linguagem exige o pacote
+  separado `codly-languages` (0.1.1)**.
+
+Nenhum deles é dependência do projeto: a apresentação usa só touying. Foram testados
+porque a seção de curadoria os recomenda, e recomendar sem compilar viola a regra desta
+skill.
