@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Tema de realce de sintaxe na paleta da apresentação.
+
+  O realce nativo do Typst usa um esquema vivo (vermelho/verde/azul) que
+  briga com a paleta sóbria do modelo institucional. Este tema mapeia os
+  escopos do syntect para os MESMOS tokens de config/theme.typ:
+
+    texto      #262626   código em geral
+    primary    #44546A   palavras-chave, funções
+    secondary  #8497B0   comentários
+    accentdark #C55A11   literais (string, número)
+
+  Se um token de theme.typ mudar, mude aqui também: o formato tmTheme não
+  aceita variável.
+-->
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>IFMA Imperatriz</string>
+  <key>settings</key>
+  <array>
+
+    <dict>
+      <key>settings</key>
+      <dict>
+        <key>background</key><string>#FFFFFF</string>
+        <key>foreground</key><string>#262626</string>
+        <key>caret</key><string>#262626</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key><string>Comentário</string>
+      <key>scope</key><string>comment, punctuation.definition.comment</string>
+      <key>settings</key>
+      <dict><key>foreground</key><string>#8497B0</string></dict>
+    </dict>
+
+    <dict>
+      <key>name</key><string>Literal de texto</string>
+      <key>scope</key><string>string, punctuation.definition.string, markup.raw</string>
+      <key>settings</key>
+      <dict><key>foreground</key><string>#C55A11</string></dict>
+    </dict>
+
+    <dict>
+      <key>name</key><string>Número e constante</string>
+      <key>scope</key><string>constant.numeric, constant.language, constant.character</string>
+      <key>settings</key>
+      <dict><key>foreground</key><string>#C55A11</string></dict>
+    </dict>
+
+    <dict>
+      <key>name</key><string>Palavra-chave e operador</string>
+      <key>scope</key><string>keyword, storage, storage.type, keyword.operator</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key><string>#44546A</string>
+        <key>fontStyle</key><string>bold</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key><string>Função e tipo</string>
+      <key>scope</key><string>entity.name.function, support.function, entity.name.type, support.type, support.class</string>
+      <key>settings</key>
+      <dict><key>foreground</key><string>#44546A</string></dict>
+    </dict>
+
+    <dict>
+      <key>name</key><string>Variável e parâmetro</string>
+      <key>scope</key><string>variable, variable.parameter, meta.parameter</string>
+      <key>settings</key>
+      <dict><key>foreground</key><string>#262626</string></dict>
+    </dict>
+
+    <dict>
+      <key>name</key><string>Marcação: título</string>
+      <key>scope</key><string>markup.heading, entity.name.section</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key><string>#44546A</string>
+        <key>fontStyle</key><string>bold</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key><string>Marcação: ênfase</string>
+      <key>scope</key><string>markup.italic</string>
+      <key>settings</key>
+      <dict><key>fontStyle</key><string>italic</string></dict>
+    </dict>
+
+    <dict>
+      <key>name</key><string>Marcação: forte</string>
+      <key>scope</key><string>markup.bold</string>
+      <key>settings</key>
+      <dict><key>fontStyle</key><string>bold</string></dict>
+    </dict>
+
+    <dict>
+      <key>name</key><string>Pontuação</string>
+      <key>scope</key><string>punctuation, meta.brace</string>
+      <key>settings</key>
+      <dict><key>foreground</key><string>#262626</string></dict>
+    </dict>
+
+    <dict>
+      <key>name</key><string>Inválido</string>
+      <key>scope</key><string>invalid</string>
+      <key>settings</key>
+      <dict><key>foreground</key><string>#C55A11</string></dict>
+    </dict>
+
+  </array>
+  <key>uuid</key>
+  <string>7d5e1a2c-4b3f-4c8e-9a10-2f6b8c1d4e93</string>
+</dict>
+</plist>
