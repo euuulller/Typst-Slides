@@ -66,6 +66,26 @@ Leia as PNGs geradas. Procure por, nesta ordem:
 Comparação obrigatória: `Seminário Relações de Ângulo Barra-Bola v.3.pdf`. As medidas
 esperadas estão em `.claude/skills/typst-slides/design.md` — não remeça o PDF de referência.
 
+## 3b. Auditoria mecânica (revisão geral)
+
+Olhar 76 slides um a um não escala e deixa passar coisa. Quatro medições pegam o que o
+olho não pega. Receitas completas em `checklist.md`.
+
+| O que medir | Como | Pega |
+|---|---|---|
+| Overflow e página vazia | caixa de tinta de cada PNG vs. margens | texto fora da área útil |
+| Corpo mínimo | operadores `/f<N> <tamanho> Tf` no PDF | texto abaixo de 14 pt |
+| Exemplos de código | extrair cada bloco ` ```typ ` e compilar | código que o aluno copia e quebra |
+| Versões e URLs | conferir contra o índice oficial e `curl -o /dev/null -w %{http_code}` | dado desatualizado |
+
+Dois cuidados aprendidos na prática:
+
+- **Índice e expoente de matemática são menores de propósito** (fator 0.7 do Typst). Não
+  conte como violação do corpo mínimo — só texto corrido conta.
+- Ao extrair blocos de código, a cerca de fechamento pode vir seguida de `,` ou `]` quando
+  o bloco é argumento de função. Um extrator que só procura ` ``` ` sozinho engole o
+  arquivo inteiro e reporta erros falsos.
+
 ## 4. Onde corrigir
 
 - Defeito em **mais de um slide** → corrija em `config/`.

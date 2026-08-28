@@ -103,6 +103,37 @@ reduzida, ao fechar cada fase.
 
 ---
 
+## Receitas da auditoria mecânica
+
+Quatro comandos que substituem a inspeção olho a olho na revisão geral.
+
+**Corpos de texto usados no PDF.** Descomprima com `zlib` cada objeto que tenha um
+`stream`, e conte as ocorrências do operador de fonte. Atenção a dois detalhes que
+custaram tempo:
+
+- o operador do Typst é minúsculo — `/f0 18 Tf`, e não `/F0`;
+- a diretiva `stream` pode ser seguida de CR+LF ou só LF, então a expressão que separa
+  o conteúdo precisa aceitar os dois.
+
+Qualquer tamanho abaixo de 14 pt que **não** seja índice, expoente ou a legenda do logo
+é violação do corpo mínimo.
+
+**Overflow e página vazia** — decodifique cada PNG (zlib + desfiltragem das scanlines,
+sem dependência externa), ache a caixa de tinta e compare com as margens. Fundo `#F0F0F0`
+e branco contam como vazio. Exclua a coluna do badge (x > 840 pt) ao medir onde o
+conteúdo termina, senão toda página parece encostar no rodapé.
+
+**Exemplos de código** — extraia cada bloco ` ```typ ` e compile isolado. Falha por
+`file not found`, `does not exist` ou `unknown variable` de pacote é esperada num
+fragmento; qualquer outra é defeito real.
+
+**Versões e URLs**:
+
+```bash
+curl -s -o /dev/null -w "%{http_code}" -L <url>; echo
+curl -s https://packages.typst.org/preview/index.json   # e comparar com o slide
+```
+
 ## Comparação final com o PDF de referência
 
 Coloque lado a lado e confira: capa, um slide de conteúdo, o slide de tópicos e o de
