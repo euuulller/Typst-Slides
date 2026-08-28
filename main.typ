@@ -41,7 +41,11 @@
 #include "sections/05-formatacao.typ"
 #include "sections/06-listas.typ"
 
-// Próximas seções (FASES 8 a 11):
-//   = Elementos   imagens, tabelas, matemática
+= Elementos
+#include "sections/07-imagens.typ"
+#include "sections/08-tabelas.typ"
+#include "sections/09-matematica.typ"
+
+// Próximas seções (FASES 9 a 11):
 //   = ABNT        referências, citações, normas
 //   = Prática     pacotes, artigo completo, conclusão
