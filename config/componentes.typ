@@ -50,8 +50,8 @@
 //    avaliado ANTES de o contador dar o passo (dava "0/3");
 //  - `counter(page)` também não: a capa, que troca a margem da página, não o
 //    incrementa, e o total saía um a menos que o número de páginas.
-// `here().page()` dá a página física, e o total vem de um marcador invisível
-// no fim do documento — que é, por definição, a última página.
+// `here().page()` dá a página física; o total vem da ÚLTIMA ocorrência do
+// marcador emitido pelo rodapé — ver `rodape()` logo abaixo.
 // --------------------------------------------------------------------------
 #let badge-paginacao() = {
   let carta(preenchida) = rect(
@@ -252,7 +252,7 @@
     size: corpo.capa-autor,
     fill: cores.primary,
     weight: "bold",
-    info.autor + linebreak() + "Orientador: " + info.orientador,
+    info.autor + linebreak() + info.orientador-rotulo + ": " + info.orientador,
   ))
 
   capa-bloco(capa.local-y, text(
