@@ -36,8 +36,12 @@
 #include "sections/02-typst.typ"
 #include "sections/03-primeiro-documento.typ"
 
-// Próximas seções (FASES 7 a 11):
-//   = Sintaxe     estrutura, formatação, listas
+= Sintaxe
+#include "sections/04-estrutura.typ"
+#include "sections/05-formatacao.typ"
+#include "sections/06-listas.typ"
+
+// Próximas seções (FASES 8 a 11):
 //   = Elementos   imagens, tabelas, matemática
 //   = ABNT        referências, citações, normas
 //   = Prática     pacotes, artigo completo, conclusão
