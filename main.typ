@@ -13,16 +13,31 @@
 //      typst watch   --root . main.typ build/main.pdf
 // ==========================================================================
 
-#import "config/global.typ": apresentacao, slide-titulo
+#import "config/global.typ": apresentacao, slide-titulo, slide-topicos
 
 // Toda a aparência vive em config/. Trocar o visual da apresentação
 // inteira é editar config/theme.typ — nenhuma seção precisa ser tocada.
 #show: apresentacao
 
 #slide-titulo()
+#slide-topicos()
 
 // --------------------------------------------------------------------------
-//  Seções
-//  As demais entram nas FASES 6 a 11, na ordem do currículo.
+//  As seções de nível 1 são declaradas AQUI, e não dentro dos arquivos:
+//  assim este arquivo continua sendo o mapa da aula. Cada arquivo de
+//  sections/ traz só os slides (headings de nível 2) do seu tema.
+//
+//  Restrição do modelo: a caixa do slide de tópicos comporta ~13 caracteres
+//  a 36pt, e cabem no máximo 5 seções na altura útil. Nomes curtos.
 // --------------------------------------------------------------------------
-#include "sections/01-introducao.typ"
+
+= Fundamentos
+#include "sections/01-motivacao.typ"
+#include "sections/02-typst.typ"
+#include "sections/03-primeiro-documento.typ"
+
+// Próximas seções (FASES 7 a 11):
+//   = Sintaxe     estrutura, formatação, listas
+//   = Elementos   imagens, tabelas, matemática
+//   = ABNT        referências, citações, normas
+//   = Prática     pacotes, artigo completo, conclusão
