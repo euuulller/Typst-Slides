@@ -64,16 +64,28 @@ estão abaixo de 1.0**, e três trazem "unofficial" no próprio nome.
 
 ---
 
-## Touying — risco de compatibilidade
+## Touying — compatibilidade resolvida
 
 - Release 0.7.4 publicado em **06/06/2026**; Typst 0.15.0 em **15/06/2026**. O pacote é
-  **9 dias anterior** ao compilador.
+  **9 dias anterior** ao compilador — daí o risco levantado na FASE 1.
 - Busca por issues com "0.15" no título no repositório do touying: **0 resultados**
-  (27/08/2026). Ausência de issue não é prova de compatibilidade.
+  (27/08/2026). Ausência de issue não é prova, por isso o smoke test.
 - Mudanças recentes relevantes: 0.7.3 alterou o comportamento de `#speaker-note` e passou
   `receive-body-for-new-section-slide-fn` a `false` por padrão; 0.7.4 mudou o padrão de
   `lazy-layout` para `cols`.
-- **Pendência:** smoke test de compilação no 0.15.1 antes de fixar a dependência.
+
+**[V] Smoke test em 27/08/2026 — compila limpo no Typst 0.15.1.** Exit 0, nenhum warning,
+nenhum aviso de API depreciada. Verificado funcionando:
+
+| Recurso testado | Resultado |
+|---|---|
+| `touying-slides` + `config-page` com 960 × 540 pt | `/MediaBox[0 0 960 540]` no PDF |
+| `config-info` | ok |
+| `#pause` (subslides) | ok |
+| `#context` + `here().page()` + `counter(page).final()` | ok |
+| Dependência transitiva `@preview/uniwarn:0.1.1` | baixada automaticamente |
+
+Risco encerrado: o plano B (tema em Typst puro) **não é necessário**.
 
 ---
 
@@ -83,4 +95,5 @@ Um pacote só entra nesta tabela depois de compilar neste projeto.
 
 | Pacote | Versão fixada | Onde é usado | Verificado em |
 |---|---|---|---|
-| *(nenhuma ainda)* | | | |
+| touying | 0.7.4 | `config/global.typ` | 27/08/2026 |
+| uniwarn | 0.1.1 | transitiva do touying | 27/08/2026 |

@@ -22,14 +22,16 @@ smoke test ainda · ❔ sem campo `compiler` no índice.
 | minideck | 0.2.1 | — | — |
 | slydst | 0.1.5 | — | — |
 
-**touying** — o motor escolhido pelo projeto.
+**touying** — o motor escolhido pelo projeto. ✅ **Smoke test em 27/08/2026: compila limpo
+no 0.15.1**, sem warning e sem API depreciada.
 - *Resolve:* slides a partir de headings, contagem n/N, rastreio da seção corrente,
   `#pause` e animações, modo handout, speaker notes, temas.
 - *Usar quando:* a apresentação precisa de estrutura e navegação, não só de páginas soltas.
 - *Não usar quando:* são 5 slides estáticos — `#set page` puro basta e é mais legível.
-- *Limitação/risco:* a 0.7.4 saiu **9 dias antes** do Typst 0.15.0. Não há issue aberta
-  sobre incompatibilidade, mas isso não é prova. **Smoke test obrigatório** antes de fechar
-  a arquitetura. Plano B: tema em Typst puro (`config/theme.typ` com `context` + `query`).
+- *Limitação:* traz a dependência transitiva `uniwarn`. Sem `config-common(...)`, headings
+  `=` e `==` **não geram slide algum** — é preciso configurar `new-section-slide-fn` para
+  o rótulo de seção do cabeçalho funcionar.
+- *Risco encerrado:* a 0.7.4 é 9 dias anterior ao Typst 0.15.0, mas o smoke test passou.
 
 **polylux** — alternativa mais antiga e mais simples; menos recursos de tema e animação.
 Citar na aula como "o outro caminho", não adotar.
