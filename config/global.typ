@@ -137,6 +137,11 @@
     config-common(
       slide-fn: slide,
       new-section-slide-fn: slide-secao,
+      // O touying converte `---` em quebra de slide por padrão. Em texto em
+      // português `---` é travessão, e o padrão fazia o touying ENGOLIR
+      // silenciosamente o texto em volta do travessão. Aqui os slides são
+      // criados por heading `==`; para quebrar sem heading, use #pagebreak().
+      horizontal-line-to-pagebreak: false,
     ),
     config-info(
       title: info.titulo,
