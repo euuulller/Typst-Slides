@@ -8,20 +8,21 @@
 //  sobre estrutura modular.
 //
 //  Compile com:
+//      mkdir -p build
 //      typst compile --root . main.typ build/main.pdf
 //      typst watch   --root . main.typ build/main.pdf
 // ==========================================================================
 
-#import "config/global.typ": apresentacao
+#import "config/global.typ": apresentacao, slide-titulo
 
 // Toda a aparência vive em config/. Trocar o visual da apresentação
 // inteira é editar config/theme.typ — nenhuma seção precisa ser tocada.
 #show: apresentacao
 
+#slide-titulo()
+
 // --------------------------------------------------------------------------
 //  Seções
 //  As demais entram nas FASES 6 a 11, na ordem do currículo.
 // --------------------------------------------------------------------------
-#import "sections/01-introducao.typ": secao as introducao
-
-#introducao
+#include "sections/01-introducao.typ"
