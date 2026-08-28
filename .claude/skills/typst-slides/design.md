@@ -31,8 +31,29 @@ Não há outra fonte no documento. Toda a tipografia do modelo é Calibri.
 | Régua do rodapé | traço **2 pt** #ED7D31, de **(13.3, 49.8)** a **(844.7, 49.8)** |
 | Filete vertical do rótulo | traço **2 pt** #ED7D31, em **x = 141.4**, de **y 531.0** a **y 487.9** (altura 43.1 pt) |
 | Borda do badge n/N | traço **1 pt**, `0.773 0.353 0.0667` = **#C55A11** |
-| Título do slide | **27.98 pt** |
+| Título do slide | **36 pt** |
 | Corpo, rótulo de seção, legenda, fonte da figura, rodapé | **18 pt** |
+| Primeiro bullet do corpo ("Deals") | 27.98 pt |
+
+### Caixas de texto exatas (operadores `Tm` + clip `W*` do objeto 69)
+
+Coordenadas x absolutas e `centro-y` medido a partir do **topo** da página.
+
+| Texto | x início | largura | centro-y do topo | Fonte |
+|---|---|---|---|---|
+| Rótulo de seção ("Introduction") | **32.4** | 88.3 | **31.7** | 18 pt |
+| Título do slide | **357.4** | 371.3 | **26.7** | 36 pt |
+| Autor no rodapé | **33.2** | 97.6 | **518.0** | 18 pt itálico |
+| Título curto no rodapé | **285.2** | 443.3 | **519.4** | 18 pt negrito |
+| Badge "3" + "/32" | **894.2** | 32.5 | **493.6** | 18 pt |
+
+Centros derivados, que são o que o tema usa:
+
+- Título do slide: centro em **543.0** — centralizado entre o filete (141.4) e a
+  margem direita da régua (946.7), **não** no centro da página.
+- Título curto do rodapé: centro em **506.9** — deslocado à direita do centro da
+  página (480) porque o badge come espaço à direita.
+- Badge: centro em **910.5**, ou seja, **straddling** a régua do rodapé (490.2).
 
 Leituras derivadas:
 
@@ -101,18 +122,19 @@ São 5 caixas empilhadas e centralizadas, uma por seção.
 
 ---
 
-## 6. Reconciliação dos tamanhos de título
+## 6. Tamanhos de título — correção da primeira medição
 
-O PDF de referência é inconsistente: "Topics" e "References" saem a **44.04 pt** e
-"Purpose of control theory" a **27.98 pt**. É o *autofit* do PowerPoint encolhendo o título
-mais longo, não uma decisão de projeto.
+**A FASE 1 registrou 27.98 pt como título do slide de conteúdo. Estava errado:** aquele
+valor é do primeiro bullet do corpo ("Deals"). A extração dos operadores `Tm` mostrou que o
+título "Purpose of control theory" sai a **36 pt**.
 
-O projeto irmão em LaTeX resolveu isso padronizando o título de frame em 16 pt sobre a
-página Beamer de ≈ 453 pt de largura — equivalente a **≈ 34 pt** nesta página de 960 pt.
+Com isso a suposta inconsistência do modelo some quase toda: 36 pt no slide de conteúdo e
+44.04 pt nos estruturais (Tópicos, Referências), que têm título curto e centralizado na
+página inteira.
 
-**Decisão do projeto:** título de slide **34 pt**, com redução automática para títulos
-longos. Os 44 pt ficam reservados aos slides estruturais sem rótulo de seção (Tópicos e
-Referências), que é onde o original também os usa.
+**Decisão do projeto:** título de slide **36 pt** (medido); **44 pt** nos slides
+estruturais. Títulos longos devem ser encurtados no texto, não encolhidos automaticamente —
+autofit é o que tornou o modelo original inconsistente.
 
 ---
 
@@ -135,12 +157,19 @@ oscila, vale o valor conciliado.
 | `filete.altura` | 43.1 pt |
 | `filete.espessura` | 2 pt |
 | `badge.borda` | 1 pt, `accentdark` |
+| `badge.centro` | x 910.5 pt, y 493.6 pt do topo |
+| `cabecalho.rotulo-x` | 32.4 pt |
+| `cabecalho.rotulo-centro-y` | 31.7 pt do topo |
+| `cabecalho.titulo-centro-y` | 26.7 pt do topo |
+| `rodape.autor-x` | 33.2 pt |
+| `rodape.titulo-centro-x` | 506.9 pt |
+| `rodape.texto-centro-y` | 519.4 pt do topo |
 | `caixa.topicos.borda` | 2.75 pt, `accent` |
 | `capa.regua.inset` | 55.5 pt |
 | `capa.logo.altura` | 124.6 pt |
 | `capa.logo.esq.x` | 25.5 pt |
 | `capa.logo.dir.direita` | 913.2 pt |
-| `fonte.titulo.slide` | 34 pt |
+| `fonte.titulo.slide` | 36 pt |
 | `fonte.titulo.estrutural` | 44 pt |
 | `fonte.titulo.capa` | 32 pt |
 | `fonte.capa.autor` | 24 pt, negrito |
