@@ -46,6 +46,11 @@
 #include "sections/08-tabelas.typ"
 #include "sections/09-matematica.typ"
 
-// Próximas seções (FASES 9 a 11):
+= ABNT
+#include "sections/10-referencias.typ"
+#include "sections/11-citacoes.typ"
+#include "sections/12-abnt.typ"
+
+// Próximas seções (FASES 10 e 11):
 //   = ABNT        referências, citações, normas
 //   = Prática     pacotes, artigo completo, conclusão

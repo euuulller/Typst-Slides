@@ -119,5 +119,5 @@ criados, decisões, problemas e próximo passo. Então **pare** e pergunte
 Commits atômicos, um por unidade lógica, mensagem em pt-BR explicando o **porquê**.
 
 Fases: 1 skills ✓ · 2 arquitetura ✓ · 3 CLAUDE.md ✓ · 4 sistema visual ✓ · 5 componentes ✓ ·
-6 fundamentos ✓ · 7 sintaxe ✓ · 8 elementos ✓ · 9–11 (ABNT → pacotes → artigo final) ·
+6 fundamentos ✓ · 7 sintaxe ✓ · 8 elementos ✓ · 9 ABNT ✓ · 10–11 (pacotes → artigo) ·
 12 revisão · 13 build final.
