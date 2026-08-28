@@ -70,6 +70,24 @@ arquivo original**. Corte a faixa inferior com `box(clip: true)` e reescreva a l
 texto real logo abaixo — é o que o projeto irmão em LaTeX faz. Não estique, não deforme,
 não recrie o logo à mão, não invente outra identidade institucional.
 
+## Componentes disponíveis
+
+Tipos de slide (`config/global.typ`): `slide` (padrão, vem do heading `==`),
+`slide-titulo` (capa), `slide-secao` (automático a cada `=`), `slide-estrutural`
+(título 44 pt, sem rótulo — Tópicos e Referências), `slide-topicos` (monta-se sozinho
+por `query` dos headings de nível 1).
+
+Conteúdo (`config/macros.typ`): `conceito` `alerta` `saida` `desafio` (caixas) ·
+`codigo` `comparacao` `demo` (código) · `duas-colunas` `par-rotulado` (layout) ·
+`figura` `equacao` `tabela` `citacao` `pacote` (acadêmico) · `dest` `cmd` `espaco`.
+
+**Antes de criar componente novo, verifique se um destes serve.** Caixa nova só se
+tiver papel novo — as quatro existentes já cobrem definição, armadilha, saída simulada
+e exercício.
+
+Realce de sintaxe: nativo do Typst com a paleta do projeto em `config/codigo.tmTheme`.
+Nenhum pacote. Suporta `typ`, `python`, `latex`, `c` e os demais do syntect.
+
 ## Densidade e legibilidade
 
 Cada slide responde a **uma** pergunta: o que é / por que existe / como se escreve / quando

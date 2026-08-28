@@ -24,10 +24,12 @@ provavelmente sofreu com Word ou LaTeX.
 main.typ                entrypoint — imports e montagem, nada de conteúdo
 config/theme.typ        ÚNICO ponto de verdade visual: cores, tipografia, geometria (dados)
 config/componentes.typ  moldura: cabeçalho, rodapé, badge, capa — posição absoluta
+config/macros.typ       componentes de conteúdo: caixas, código, tabela, figura…
+config/codigo.tmTheme   paleta do realce de sintaxe
 config/global.typ       liga tudo ao touying; devolve a função `apresentacao`
 config/metadata.typ     título, autor, orientador, local, data, logos
 sections/NN-nome        uma seção por arquivo, independentes entre si
-assets/ examples/       logos e imagens · código executável dos exemplos
+assets/ examples/       logos e imagens · exemplos e galeria de componentes
 references/             rastreabilidade: typst/, packages/, abnt/
 .claude/skills/         conhecimento especializado, carregado sob demanda
 ```
@@ -114,6 +116,6 @@ criados, decisões, problemas e próximo passo. Então **pare** e pergunte
 
 Commits atômicos, um por unidade lógica, mensagem em pt-BR explicando o **porquê**.
 
-Fases: 1 skills ✓ · 2 arquitetura ✓ · 3 CLAUDE.md ✓ · 4 sistema visual ✓ · 5 componentes ·
+Fases: 1 skills ✓ · 2 arquitetura ✓ · 3 CLAUDE.md ✓ · 4 sistema visual ✓ · 5 componentes ✓ ·
 6–11 conteúdo (fundamentos → Typst → acadêmico → ABNT → pacotes → artigo final) ·
 12 revisão · 13 build final.
