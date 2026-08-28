@@ -168,8 +168,14 @@
   // Bloco de código tem corpo próprio; código EM LINHA acompanha o texto ao
   // redor. Tamanho absoluto nos dois quebrava o código em linha dentro de um
   // título, que sairia a 16pt num título de 36pt.
+  //
+  // O fator 1.1 não é arbitrário: o Typst JÁ reduz `raw` a 0.8em por conta
+  // própria, e o `em` desta regra resolve sobre esse valor já reduzido. Com
+  // 0.92em o código em linha caía a 13.25pt num texto de 18pt — abaixo do
+  // mínimo de 14pt do projeto. Com 1.1em, o pior caso (dentro de tabela, que
+  // é 0.9em) fica em 14.3pt.
   show raw.where(block: true): set text(size: corpo.codigo)
-  show raw.where(block: false): set text(size: 0.92em)
+  show raw.where(block: false): set text(size: 1.1em)
   // Matemática em serifa sobre texto em Calibri: é a convenção do material
   // técnico e o padrão do Typst. Explícito para a escolha ficar visível.
   show math.equation: set text(font: fontes.matematica)

@@ -88,9 +88,14 @@ e exercício.
 Realce de sintaxe: nativo do Typst com a paleta do projeto em `config/codigo.tmTheme`.
 Nenhum pacote. Suporta `typ`, `python`, `latex`, `c` e os demais do syntect.
 
-Bloco de código tem corpo absoluto; **código em linha usa corpo relativo** (`0.92em`).
+Bloco de código tem corpo absoluto; **código em linha usa corpo relativo** (`1.1em`).
 Tamanho absoluto nos dois faz o código em linha dentro de um título sair a 16 pt num
 título de 36 pt.
+
+O fator `1.1` não é folgado à toa: **o Typst já reduz `raw` a 0.8em por conta própria**, e
+o `em` da regra resolve sobre esse valor já reduzido. Com `0.92em` o código em linha caía a
+13.25 pt dentro de texto de 18 pt — abaixo do mínimo. Ao mexer nesse fator, meça o
+resultado no PDF; não confie na conta.
 
 ## Densidade e legibilidade
 
@@ -102,6 +107,7 @@ usar / qual o resultado. Padrão dominante: **conceito → código curto → res
 | Linhas de texto por slide | ≤ 8 |
 | Linhas de código por bloco | ≤ 12 |
 | Menor corpo de texto admitido | 14 pt (nesta página de 960 × 540) |
+| Exceções ao mínimo | índice e expoente de matemática (fator 0.7 do Typst) e a legenda do logo do laboratório, que reproduz a faixa do arquivo original |
 | Níveis de lista | 2 |
 
 Antes de fechar um slide, pergunte: **isso ajuda o aluno a entender Typst?** Se não ajudar,

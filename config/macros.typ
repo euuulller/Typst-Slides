@@ -21,7 +21,7 @@
 #let dest(x) = text(fill: cores.accentdark, weight: "bold", x)
 
 // Nome de função, comando ou arquivo, em texto corrido.
-#let cmd(x) = text(font: fontes.mono, fill: cores.primary, size: 0.92em, x)
+#let cmd(x) = text(font: fontes.mono, fill: cores.primary, size: 0.95em, x)
 
 // Espaço vertical padrão entre blocos. Existe para que nenhuma seção precise
 // escrever `v(14pt)` — a regra do projeto proíbe "pt" mágico fora de config/.
@@ -98,7 +98,7 @@
   inset: caixa.inset-codigo,
   {
     if titulo != none {
-      text(font: fontes.mono, size: 0.8em, fill: cores.secondary, titulo)
+      text(font: fontes.mono, size: 0.85em, fill: cores.secondary, titulo)
       v(caixa.inset-codigo, weak: true)
     }
     corpo-codigo
@@ -121,7 +121,7 @@
 // Par rotulado. Cada lado ganha um rótulo pequeno acima — é o que faz o
 // slide comparativo ser lido sem legenda no meio.
 #let par-rotulado(rotulo-esq, esquerda, rotulo-dir, direita, proporcao: (1fr, 1fr)) = {
-  let rotulo(t) = text(size: 0.8em, fill: cores.secondary, weight: "bold", upper(t))
+  let rotulo(t) = text(size: 0.85em, fill: cores.secondary, weight: "bold", upper(t))
   duas-colunas(
     proporcao: proporcao,
     { rotulo(rotulo-esq); v(0.3em, weak: true); esquerda },
@@ -158,7 +158,7 @@
   box(width: largura, conteudo)
   if fonte != none {
     v(0.35em, weak: true)
-    text(size: 0.8em, fill: cores.secondary, fonte)
+    text(size: 0.85em, fill: cores.secondary, fonte)
   }
 })
 
@@ -223,7 +223,7 @@
     align: (right + top, left + top),
     ..linhas
       .map(((r, v)) => (
-        text(size: 0.82em, fill: cores.secondary, weight: "bold", upper(r)),
+        text(size: 0.85em, fill: cores.secondary, weight: "bold", upper(r)),
         text(size: 0.9em, fill: cores.texto, v),
       ))
       .flatten(),
