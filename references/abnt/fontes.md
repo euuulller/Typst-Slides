@@ -44,6 +44,25 @@ Ponto didático registrado: quem define o formato da tabela **não é a ABNT**.
 Detalhe em `references/typst/fontes.md`.
 
 Cobre: formatação das referências, ordenação e citação autor-data/numérica.
+
+**Saída real, compilada em 28/08/2026** (`examples/abnt/referencias-demo.typ`):
+
+```
+CORMEN, Thomas H. et al. Introduction to Algorithms. 4. ed. Cambridge: MIT Press, 2022.
+NILSSON, James W.; RIEDEL, Susan A. Electric Circuits. 11. ed. Harlow: Pearson, 2019.
+SHANNON, Claude E. A Mathematical Theory of Communication. Bell System Technical
+  Journal, v. 27, n. 3, p. 379-423, 1948.
+TYPST GMBH. Typst Documentation. Disponível em: <https://typst.app/docs/>.
+  Acesso em: 28 ago. 2026.
+```
+
+Citação: `(NILSSON; RIEDEL, 2019)` entre parênteses; `Cormen et al. (2022)` com
+`form: "prose"`. Desambiguação `2026a`/`2026b` automática. "Disponível em" e "Acesso em"
+já saem em português.
+
+**[V] Limitação verificada:** entrada `@misc` com `howpublished` **perde a URL** e deixa
+uma vírgula solta (`TYPST GMBH. Typst Documentation. , 2026.`). Para fonte online use
+`@online` com `url` e `urldate`.
 Não cobre: capa, folha de rosto, folha de aprovação, ficha catalográfica, margens,
 entrelinhas e recuo de citação longa — tudo isso é template.
 
