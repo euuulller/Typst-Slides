@@ -159,6 +159,16 @@ Da changelog oficial da 0.15.0 (<https://typst.app/docs/changelog/0.15.0/>):
 | `cannot reference ... without context` | `here()`/`counter().get()` fora de `#context` |
 | `unexpected argument` | parâmetro que a função não tem — conferir na doc, não insistir |
 | `layout did not converge` | dependência circular entre `context` e o que ele mede |
+| *texto some sem erro nenhum* | `---` num deck touying: ver abaixo |
+
+### O erro que não dá erro: `---` no touying
+
+Em marcação, `---` é travessão. Mas o touying tem
+`horizontal-line-to-pagebreak: true` **por padrão** e converte `---` em quebra de slide:
+o texto antes e depois do travessão vai parar em páginas diferentes, sem aviso nenhum.
+
+Em português isso é grave, porque travessão é pontuação corrente. Este projeto desliga a
+opção em `config/global.typ`; para quebrar um slide sem heading, use `#pagebreak()`.
 
 Compilação com raiz explícita (necessária quando há import fora da pasta do arquivo):
 

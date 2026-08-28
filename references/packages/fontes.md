@@ -87,6 +87,12 @@ nenhum aviso de API depreciada. Verificado funcionando:
 
 Risco encerrado: o plano B (tema em Typst puro) **não é necessário**.
 
+**[V] Comportamento padrão perigoso, descoberto na FASE 6:**
+`config-common(horizontal-line-to-pagebreak: ...)` vale `true` por padrão e converte
+`---` em quebra de slide (documentado em `src/configs.typ:196`). Como `---` é travessão
+em português, o touying separava em páginas diferentes o texto antes e o depois do
+travessão, **sem emitir erro nem warning**. O projeto passa a desligar a opção.
+
 ---
 
 ## Dependências efetivamente adotadas

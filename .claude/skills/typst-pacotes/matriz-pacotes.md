@@ -31,6 +31,9 @@ no 0.15.1**, sem warning e sem API depreciada.
 - *Limitação:* traz a dependência transitiva `uniwarn`. Sem `config-common(...)`, headings
   `=` e `==` **não geram slide algum** — é preciso configurar `new-section-slide-fn` para
   o rótulo de seção do cabeçalho funcionar.
+- *Armadilha séria:* `horizontal-line-to-pagebreak` é `true` por padrão e transforma
+  `---` em quebra de slide. Em texto em português, onde `---` é travessão, isso **engole
+  o texto em volta sem erro nenhum**. Desligue em `config-common`.
 - *Risco encerrado:* a 0.7.4 é 9 dias anterior ao Typst 0.15.0, mas o smoke test passou.
 
 **polylux** — alternativa mais antiga e mais simples; menos recursos de tema e animação.

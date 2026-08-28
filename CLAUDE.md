@@ -57,6 +57,8 @@ Sintaxe e semântica: skill `typst-core`. Específico deste projeto:
 - A moldura é desenhada por `place` absoluto no `background` da página, não pelo fluxo —
   é o que faz régua, filete e badge caírem nas coordenadas medidas.
 - Lista de fontes só com famílias instaladas — `unknown font family` é warning bloqueante.
+- **Nunca use `---` para quebrar slide.** É travessão em português, e o touying o converte
+  em quebra de página por padrão (aqui a opção está desligada). Para quebrar: `#pagebreak()`.
 
 ## Regras de ABNT
 
@@ -117,5 +119,5 @@ criados, decisões, problemas e próximo passo. Então **pare** e pergunte
 Commits atômicos, um por unidade lógica, mensagem em pt-BR explicando o **porquê**.
 
 Fases: 1 skills ✓ · 2 arquitetura ✓ · 3 CLAUDE.md ✓ · 4 sistema visual ✓ · 5 componentes ✓ ·
-6–11 conteúdo (fundamentos → Typst → acadêmico → ABNT → pacotes → artigo final) ·
+6 fundamentos ✓ · 7–11 conteúdo (sintaxe → elementos → ABNT → pacotes → artigo final) ·
 12 revisão · 13 build final.
