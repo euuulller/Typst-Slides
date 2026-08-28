@@ -63,7 +63,7 @@
 //  ensina na seção de ABNT.
 // --------------------------------------------------------------------------
 #slide-estrutural[Referências][
-  #set text(size: 0.8em)
+  #set text(size: 0.85em)
   // `full: true` é obrigatório aqui: por padrão o Typst imprime SÓ as obras
   // citadas com @ no texto, e uma apresentação não cita — ela mostra.
   #bibliography(

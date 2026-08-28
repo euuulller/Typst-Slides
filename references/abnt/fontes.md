@@ -82,6 +82,9 @@ enquanto estiverem nesta lista. Ao confirmar, registre a fonte e a data e mova p
 - [ ] Legenda de figura acima e fonte abaixo
 - [ ] Referências alinhadas à esquerda, sem justificar, separadas por linha em branco
 - [ ] Faixa de palavras do resumo por tipo de trabalho
+- [ ] No sistema numérico, a lista de referências segue a ordem de citação e não a
+      alfabética — apurado na revisão da FASE 12; o slide o apresenta como prática
+      corrente até haver confirmação
 
 ---
 

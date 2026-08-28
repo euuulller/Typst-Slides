@@ -56,7 +56,7 @@
 ```
   ],
   saida[
-    #set text(size: 0.82em)
+    #set text(size: 0.85em)
     CORMEN, Thomas H. _et al_. *Introduction to Algorithms*. 4. ed. Cambridge: MIT
     Press, 2022.
 
@@ -85,7 +85,7 @@
   ],
   [
     #saida[
-      #set text(size: 0.82em)
+      #set text(size: 0.85em)
       TYPST GMBH. *Typst Documentation*. Disponível em: \<https://typst.app/docs/\>.
       Acesso em: 28 ago. 2026.
     ]

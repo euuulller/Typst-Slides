@@ -37,8 +37,10 @@ as citadas entram.
     no trabalho inteiro.
   ],
   alerta[
-    Misturar os dois é erro formal. E o sistema numérico exige que a ordem das
-    referências siga a ordem de citação, não a alfabética.
+    Misturar os dois no mesmo trabalho é inconsistência formal.
+
+    É *prática corrente* que, no sistema numérico, a lista de referências siga a ordem de
+    citação em vez da alfabética --- confira no manual do seu curso.
   ],
 )
 
