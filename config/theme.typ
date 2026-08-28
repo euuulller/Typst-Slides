@@ -109,19 +109,33 @@
   texto-centro-y: 519.4pt,
 )
 
+// Badge: cartas de 77.7 x 31.9 medidas no modelo, empilhadas com deslocamento
+// de 3pt em x e 2pt em y por carta — o envelope resultante (83.7 x 35.9) bate
+// com o medido (84.4 x 35.9). A carta da frente é a de baixo-esquerda.
 #let badge = (
   borda: 1pt,
-  largura: 85pt,
-  altura: 36pt,
-  centro-x: 910.5pt,
-  centro-y: 493.6pt,
+  largura: 77.7pt,
+  altura: 31.9pt,
+  desloca-x: 3pt,
+  desloca-y: 2pt,
+  centro-x: 904.5pt,
+  centro-y: 488.1pt,
 )
 
+// Caixas do slide de tópicos, medidas no objeto 39 do modelo:
+// 5 retângulos idênticos de 240.37 x 50.892 em x = 345.28, com passo médio de
+// 75.7pt entre eles. O centro horizontal cai em 465.5 — 14.5pt à ESQUERDA do
+// centro da página, e isso é do modelo, não erro.
+//
+// Consequência de projeto: com 36pt de corpo, cabem ~13 caracteres por caixa.
+// Nomes de seção precisam ser curtos ("Fundamentos", "ABNT", "Pacotes"), o que
+// aliás é boa prática. Nome longo estoura a caixa e a revisão pega.
 #let caixa-topicos = (
   borda: 2.75pt,
-  largura: 403pt,    // 0.42 da largura da página
-  altura: 38pt,
-  espacamento: 15.7pt,
+  largura: 240.37pt,
+  altura: 50.89pt,
+  espacamento: 24.8pt,   // passo 75.7 - altura 50.89
+  centro-x: 465.5pt,
 )
 
 // Blocos da capa em coordenadas absolutas a partir do topo. A capa não tem
@@ -137,6 +151,17 @@
   titulo-y: 202pt,
   autor-y: 316pt,
   local-y: 478pt,
+)
+
+// Caixas e blocos de conteúdo (macros.typ). Espessuras e recuos únicos:
+// se um componente novo precisa de valor diferente, o valor entra aqui.
+#let caixa = (
+  borda: 1pt,
+  borda-forte: 1.6pt,
+  inset: 10pt,
+  inset-codigo: 8pt,
+  inset-tabela: 7pt,
+  gap: 14pt,
 )
 
 // --------------------------------------------------------------------------
