@@ -1,0 +1,13 @@
+# Normaliza a quebra de linha no repositório.
+# O projeto é editado em Windows mas compila igual em qualquer plataforma;
+# guardar tudo em LF evita diff espúrio e o aviso de CRLF a cada commit.
+* text=auto eol=lf
+
+# Binários: nunca converter.
+*.png  binary
+*.pdf  binary
+*.jpg  binary
+*.svg  text eol=lf
+
+# O tmTheme é XML de texto.
+*.tmTheme text eol=lf
