@@ -1,0 +1,8 @@
+# Artefatos de compilação do Typst
+build/
+*.pdf
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
