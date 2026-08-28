@@ -108,7 +108,38 @@ de uma moldura branca. Ao montar a capa, **fixe a altura em 124.6 pt e deixe a l
 | Borda das caixas | traço **2.75 pt** #ED7D31 |
 | Réguas de cabeçalho e rodapé | iguais às do slide de conteúdo |
 
-São 5 caixas empilhadas e centralizadas, uma por seção.
+Os 5 retângulos, lidos direto dos operadores `re S`:
+
+| # | x | y | largura | altura | centro-y do topo |
+|---|---|---|---|---|---|
+| 1 | 345.28 | 404.42 | 240.37 | 50.892 | 110.1 |
+| 2 | 345.28 | 328.54 | 240.37 | 50.892 | 186.0 |
+| 3 | 345.28 | 248.40 | 240.37 | 50.892 | 266.2 |
+| 4 | 345.28 | 176.27 | 240.37 | 50.892 | 338.3 |
+| 5 | 345.28 | 101.60 | 240.37 | 50.892 | 413.0 |
+
+- Todas idênticas: **240.37 × 50.892 pt**.
+- **Centro horizontal em 465.5** — 14.5 pt à *esquerda* do centro da página (480).
+  É do modelo, não erro de medição.
+- Passo entre caixas: 75.88, 80.14, 72.13, 74.67 → média **75.7 pt**, ou seja
+  **24.8 pt** de espaço entre uma caixa e a seguinte. A oscilação é imprecisão do
+  PowerPoint; o tema padroniza.
+
+**Restrição de projeto que isto impõe:** com 36 pt de corpo em 240 pt de largura cabem
+cerca de **13 caracteres**. Nome de seção precisa ser curto — "Fundamentos", "ABNT",
+"Pacotes". O modelo faz o mesmo (Introduction, Derivation, Properties).
+
+### Badge de paginação (mesmo desenho em todos os slides)
+
+Dois retângulos distintos, ambos **77.7 × 31.9 pt**, deslocados de (6.0, 4.1):
+
+| | x | y |
+|---|---|---|
+| carta da frente (com o número) | 862.3 | 34.0 |
+| carta de trás | 868.3 | 38.1 |
+
+Envelope **84.4 × 35.9 pt**, centro em **(904.5, 488.1 do topo)**. A pilha cresce para
+cima e para a direita; a carta da frente é a de baixo-esquerda.
 
 ---
 
