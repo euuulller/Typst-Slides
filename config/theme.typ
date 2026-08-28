@@ -44,13 +44,12 @@
 )
 
 // Corpos de texto, em pt sobre a página de 960 x 540.
-// O PDF de referência oscila entre 27.98 e 44.04 no título porque o
-// PowerPoint encolhe títulos longos sozinho; 34pt é o valor conciliado
-// (equivale aos 16pt do projeto irmão em Beamer). Os 44pt ficam para os
-// slides estruturais, que é onde o original também os usa.
+// Medidos nas caixas de texto do PDF de referência: título de slide 36pt,
+// corpo 18pt. Os 44pt ficam para os slides estruturais (Tópicos e
+// Referências), que é onde o original também os usa.
 #let corpo = (
   titulo-capa: 32pt,
-  titulo-slide: 34pt,
+  titulo-slide: 36pt,
   titulo-estrutural: 44pt,   // Tópicos e Referências
   capa-autor: 24pt,
   capa-local: 24pt,
@@ -91,14 +90,31 @@
 
 #let filete = (
   x: 141.4pt,        // separa o rótulo de seção do título
+  topo: 9pt,
   altura: 43.1pt,
   espessura: 2pt,
 )
 
+// Posições medidas nas caixas de texto do slide de conteúdo do modelo.
+// "centro-y" é a distância do topo da página ao centro vertical do texto.
+#let cabecalho = (
+  rotulo-x: 32.4pt,
+  rotulo-centro-y: 31.7pt,
+  titulo-centro-y: 26.7pt,
+)
+
+#let rodape = (
+  autor-x: 33.2pt,
+  titulo-centro-x: 506.9pt,   // não é o centro da página: o badge desloca
+  texto-centro-y: 519.4pt,
+)
+
 #let badge = (
   borda: 1pt,
-  largura: 79pt,     // faixa livre entre o fim da régua e a margem direita
-  altura: 37pt,
+  largura: 85pt,
+  altura: 36pt,
+  centro-x: 910.5pt,
+  centro-y: 493.6pt,
 )
 
 #let caixa-topicos = (
@@ -108,12 +124,19 @@
   espacamento: 15.7pt,
 )
 
+// Blocos da capa em coordenadas absolutas a partir do topo. A capa não tem
+// fluxo de texto: cada bloco é colocado onde foi medido, e nenhum empurra o
+// seguinte para fora da página.
 #let capa = (
   logo-altura: 124.6pt,
+  logo-largura-lab: 204.8pt,
   logo-esq-x: 25.5pt,
   logo-dir-direita: 913.2pt,
   logo-topo: 14.3pt,
-  regua-y-da-base: 248.4pt,
+  regua-y-da-base: 248.4pt,   // régua a 291.6pt do topo
+  titulo-y: 202pt,
+  autor-y: 316pt,
+  local-y: 478pt,
 )
 
 // --------------------------------------------------------------------------
