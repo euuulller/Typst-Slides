@@ -64,7 +64,7 @@
       align(center + horizon, text(
         size: corpo.rodape,
         fill: cores.primary,
-        context [#here().page()/#query(<fim-da-apresentacao>).first().location().page()],
+        context [#here().page()/#query(<pagina-com-rodape>).last().location().page()],
       ))
     },
   )
@@ -144,6 +144,15 @@
 // --------------------------------------------------------------------------
 #let rodape() = {
   let altura-linha = 24pt
+
+  // Marcador invisível, emitido em TODA página que tem rodapé. O badge
+  // consulta a última ocorrência para saber o total — e a última ocorrência
+  // está, por definição, na última página.
+  //
+  // Ficava no fim do documento até a FASE 11, mas ali era conteúdo solto: uma
+  // chamada explícita de slide antes dele fazia o touying abrir um slide vazio
+  // só para hospedá-lo.
+  place(top + left, dy: 0pt, [#metadata(none)<pagina-com-rodape>])
 
   regua(
     de: margens.regua,

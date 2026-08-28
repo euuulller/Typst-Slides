@@ -161,6 +161,19 @@ Da changelog oficial da 0.15.0 (<https://typst.app/docs/changelog/0.15.0/>):
 | `layout did not converge` | dependência circular entre `context` e o que ele mede |
 | *texto some sem erro nenhum* | `---` num deck touying: ver abaixo |
 
+### Bibliografia sai vazia
+
+`#bibliography(...)` imprime **só as obras citadas com `@` no texto**. O parâmetro `full`
+vale `false` por padrão. Numa apresentação, que mostra as fontes em vez de citá-las, o
+slide de referências sai em branco sem erro nenhum. Use `full: true`.
+
+### Marcador de "última página" não pode ser conteúdo solto
+
+Para descobrir o total de páginas, a tentação é pôr um `#metadata(none)<fim>` no fim do
+documento e consultar a página dele. Num deck touying isso cria um **slide vazio** quando
+há uma chamada explícita de slide antes. Emita o marcador dentro do rodapé, que é
+desenhado em toda página, e consulte a **última** ocorrência.
+
 ### O erro que não dá erro: `---` no touying
 
 Em marcação, `---` é travessão. Mas o touying tem

@@ -175,8 +175,4 @@
   show math.equation: set text(font: fontes.matematica)
 
   body
-
-  // Marcador invisível: o badge de paginação consulta a página deste elemento
-  // para saber o total. Ver o comentário em componentes.typ.
-  [#metadata(none)<fim-da-apresentacao>]
 }
