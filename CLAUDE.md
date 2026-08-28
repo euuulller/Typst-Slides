@@ -21,14 +21,15 @@ provavelmente sofreu com Word ou LaTeX.
 ## Arquitetura
 
 ```
-main.typ            entrypoint — imports e montagem, nada de conteúdo
-config/theme.typ    ÚNICO ponto de verdade visual: cores, tipografia, geometria (dados)
-config/global.typ   liga o touying ao tema; devolve a função `apresentacao`
-config/metadata.typ título, autor, orientador, local, data, logos
-sections/NN-nome    uma seção por arquivo, independentes entre si
-assets/ examples/   logos e imagens · código executável dos exemplos
-references/         rastreabilidade: typst/, packages/, abnt/
-.claude/skills/     conhecimento especializado, carregado sob demanda
+main.typ                entrypoint — imports e montagem, nada de conteúdo
+config/theme.typ        ÚNICO ponto de verdade visual: cores, tipografia, geometria (dados)
+config/componentes.typ  moldura: cabeçalho, rodapé, badge, capa — posição absoluta
+config/global.typ       liga tudo ao touying; devolve a função `apresentacao`
+config/metadata.typ     título, autor, orientador, local, data, logos
+sections/NN-nome        uma seção por arquivo, independentes entre si
+assets/ examples/       logos e imagens · código executável dos exemplos
+references/             rastreabilidade: typst/, packages/, abnt/
+.claude/skills/         conhecimento especializado, carregado sob demanda
 ```
 
 Compilador **Typst 0.15.1** · motor de slides **touying 0.7.4** (smoke test aprovado).
@@ -49,7 +50,10 @@ Sintaxe e semântica: skill `typst-core`. Específico deste projeto:
 
 - Caminho **sempre** com barra normal — desde a 0.15 o `\` não é aceito, nem no Windows.
 - Import de pacote **sempre** com versão fixada: `@preview/nome:0.0.0`.
-- `theme.typ` exporta só **dados**; componente visual mora em `global.typ`.
+- `theme.typ` exporta só **dados**; a moldura mora em `componentes.typ`; o wiring do
+  touying, em `global.typ`.
+- A moldura é desenhada por `place` absoluto no `background` da página, não pelo fluxo —
+  é o que faz régua, filete e badge caírem nas coordenadas medidas.
 - Lista de fontes só com famílias instaladas — `unknown font family` é warning bloqueante.
 
 ## Regras de ABNT
@@ -110,6 +114,6 @@ criados, decisões, problemas e próximo passo. Então **pare** e pergunte
 
 Commits atômicos, um por unidade lógica, mensagem em pt-BR explicando o **porquê**.
 
-Fases: 1 skills ✓ · 2 arquitetura ✓ · 3 CLAUDE.md ✓ · 4 sistema visual · 5 componentes ·
+Fases: 1 skills ✓ · 2 arquitetura ✓ · 3 CLAUDE.md ✓ · 4 sistema visual ✓ · 5 componentes ·
 6–11 conteúdo (fundamentos → Typst → acadêmico → ABNT → pacotes → artigo final) ·
 12 revisão · 13 build final.
