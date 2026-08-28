@@ -27,6 +27,18 @@
 // escrever `v(14pt)` — a regra do projeto proíbe "pt" mágico fora de config/.
 #let espaco(n: 1) = v(caixa.gap * n)
 
+// Anotação de apoio: menor e em cor secundária. Comentário sobre um exemplo,
+// nunca conteúdo que o aluno precise ler de longe.
+#let nota(x) = text(size: 0.85em, fill: cores.secondary, x)
+
+// Moldura neutra para representar uma imagem ausente num exemplo.
+#let figura-simulada(largura: 60%, altura: 34pt) = box(
+  width: largura,
+  height: altura,
+  stroke: caixa.borda + cores.muted,
+  align(center + horizon, nota[_imagem_]),
+)
+
 // --------------------------------------------------------------------------
 // 2. CAIXAS
 //    Três papéis distintos, três bordas distintas. Se uma caixa nova não tem

@@ -47,11 +47,9 @@ após a frequência de corte.
 ```,
 [
   #align(center)[
-    #box(width: 60%, height: 34pt, stroke: 0.5pt + luma(180))[
-      #align(center + horizon)[_imagem_]
-    ]
+    #figura-simulada()
     #v(0.3em)
-    #text(size: 0.85em)[Figura 3 --- Resposta em frequência.]
+    #nota[Figura 3 --- Resposta em frequência.]
   ]
 
   A Figura 3 mostra a queda após a frequência de corte.

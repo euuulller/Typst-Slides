@@ -3,6 +3,7 @@
 // ==========================================================================
 
 #import "../config/macros.typ": *
+#import "../config/theme.typ": caixa
 
 == A tabela mínima
 
@@ -21,7 +22,7 @@
 [
   #table(
     columns: 3,
-    inset: 5pt,
+    inset: caixa.inset-tabela,
     table.header([$f$ (Hz)], [$|Z|$ ($Omega$)], [Erro]),
     [100], [1591,5], [0,68 %],
     [1000], [159,2], [1,13 %],
