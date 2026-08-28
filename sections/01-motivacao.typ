@@ -44,6 +44,9 @@ Nenhum dos três é errado. O que muda é *quem paga o custo da formatação* --
 
 #demo(
 ```typ
+#set heading(numbering: "1.1")
+#set math.equation(numbering: "(1)")
+
 = Introdução
 O sistema de controle é descrito
 pela @eq:planta.
@@ -55,7 +58,11 @@ $ G(s) = K/(tau s + 1) $ <eq:planta>
 
   O sistema de controle é descrito pela Equação 1.
 
-  $ G(s) = K/(tau s + 1) $
+  #grid(
+    columns: (1fr, auto),
+    align: horizon,
+    $ G(s) = K/(tau s + 1) $, [(1)],
+  )
 ],
 )
 

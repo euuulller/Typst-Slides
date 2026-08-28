@@ -44,7 +44,7 @@ o cabeçalho --- e é o que faz o cabeçalho *repetir* quando a tabela vira a p�
 #table(
   columns: (auto, 1fr, 4em),
   align: (left, left, right),
-  ...
+  [$R$], [Resistência], [98,4],
 )
 ```
   ],
@@ -83,7 +83,7 @@ aquilo é um dado ou um arranjo.
   codigo[
 ```typ
 #figure(
-  table(columns: 3, ..),
+  table(columns: 2, [$f$], [$|Z|$]),
   caption: [Impedância medida.],
   kind: table,
 ) <tab:impedancia>

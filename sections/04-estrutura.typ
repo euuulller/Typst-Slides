@@ -59,6 +59,8 @@ nenhum número é digitado.
 #demo(
   proporcao: (1.15fr, 1fr),
 ```typ
+#set heading(numbering: "1.1")
+
 = Resultados <sec:resultados>
 
 Os ensaios da @sec:resultados

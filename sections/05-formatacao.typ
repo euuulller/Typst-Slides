@@ -59,7 +59,7 @@ Cinco linhas resolvem papel, fonte, idioma, justificação, recuo de parágrafo 
 #demo(
   proporcao: (1.1fr, 1fr),
 ```typ
-#show "RLC": text(weight: "bold")
+#show "RLC": strong
 
 O circuito RLC série tem
 frequência de ressonância
